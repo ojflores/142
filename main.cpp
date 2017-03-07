@@ -1,11 +1,9 @@
 #include <iostream>
 #include <string>
-#define ITEMS 5
+#include "chair.h"
+
 using namespace std;
-/*
-string menu[ITEMS] = {"salad", "meatloaf", "nachos", "pizza", "burrito"};
-int menu_price[ITEMS] = {10, 12, 8, 9, 10};
-*/
+
 
 void test(){
 	string access;
@@ -17,6 +15,15 @@ void test(){
 }
 
 int main(){
+	string menu[ITEMS] = {"salad", "meatloaf", "nachos", "pizza", "burrito"};
+	int menu_price[ITEMS] = {10, 12, 8, 9, 10};
+	
+	Chair A;
+	A.take_order();
+	A.make_bill(menu_price, menu);
+	
+	
+	/*
 	int counter;
 	string access;
 	do{
@@ -33,7 +40,7 @@ int main(){
 		cout << "would you like to exit? yes/no?" << endl;
 		cin >> access;
 	}while (access != "yes");
-	
+	*/
 	
 	
 	
