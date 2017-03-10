@@ -16,7 +16,9 @@ void Chair::take_order(){
 
 
 //makes the bill for each individual chair
-void Chair::make_bill(int array[], string menu[]){
+void Chair::make_bill(){
+	string menu[ITEMS] = {"salad", "meatloaf", "nachos", "pizza", "burrito"};
+	int menu_price[ITEMS] = {10, 12, 8, 9, 10};
 	bill = 0;
 	int i, x;
 	for (i = 0; i < counter; i++){
@@ -24,9 +26,19 @@ void Chair::make_bill(int array[], string menu[]){
 		while (order[i] != menu[x]){
 			x++;
 		}
-		bill += array[x];
+		bill += menu_price[x];
 	}
 	
 	cout << bill << endl;
 	
+}
+
+//returns the position of the chair
+int Chair::pos_return(){
+	return position;
+}
+
+//assigns the position of the person ordering
+void Chair::assign_position(int p){
+	position = p;
 }
