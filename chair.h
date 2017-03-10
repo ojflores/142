@@ -5,12 +5,11 @@
 #define ITEMS 5
 using namespace std;
 
-
 class Chair{
 private:
-	int counter;
 	int position;
 public:
+	int counter;
 	int bill;
 	string order[ITEMS];
 
@@ -28,7 +27,6 @@ public:
 	
 	//assigns the position of who is ordering
 	void assign_position(int p);
-	
 };
 
 #endif

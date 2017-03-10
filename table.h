@@ -3,7 +3,6 @@
 #include <vector>
 #include "chair.h"
 
-
 class Table{
 private:
 		vector<Chair> tables;
@@ -14,6 +13,9 @@ public:
 		
 		//inserts the chairs into the vector
 		void chairs();
+		
+		//asks and orients how the customer wants to be billed
+		void final_check();
 		
 		//bills the people individually for their order
 		void seperate_check();
@@ -26,6 +28,8 @@ public:
 		
 		//outputs all the items that have been ordered and which position has ordered it
 		void view_table();
+		
+		//clears everything from the table 
+		void clear_table();
 };
-
 #endif

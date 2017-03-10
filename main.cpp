@@ -21,6 +21,8 @@ void command(Table& object){
 					break;
 			case 2: object.chairs();
 					break;
+			case 3: object.final_check();
+					break;
 		}
 	}while (access != 4);
 	cout << "\n\n";
@@ -52,11 +54,6 @@ int main(){
 		cout << "would you like to exit? yes/no?" << endl;
 		cin >> access;
 	}while (access != "yes");
-	
-	
-	
-	
-	
-	
+
 	return 0;
 }

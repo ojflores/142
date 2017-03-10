@@ -35,7 +35,6 @@ void Table::seperate_check(){
 void Table::pay_together(){
 	int final_bill, i;
 	for (i = 0; i < people; i++){
-		
 		tables[i].make_bill();
 		final_bill += tables[i].bill;
 	}
@@ -56,7 +55,9 @@ void Table::split_bill(){
 	
 }
 
+//outputs all the items that have been ordered and which position has ordered it
 void Table::view_table(){
+	int i;
 	if (people == 0){
 		int r;
 		cout << "there is no one at this table.\n";
@@ -64,9 +65,45 @@ void Table::view_table(){
 		cin >> r;
 		return;
 	}
+	else {
+		int n;
+		cout << "\n";
+		for (i=0; i < people; i++){
+			cout << tables[i].pos_return() + 1 << endl;
+			for (n=0; n < tables[i].counter; n++){
+				cout << tables[i].order[n] << endl;
+			}
+		}
+	}
+	
+}
+
+//asks and orients how the customer wants to be billed
+void Table::final_check(){
 	int i;
-	for (i=0; i < people; i++){
-		cout << tables[i].pos_return() << endl;
+	cout << "how would you like to go about paying?\n";
+	cin >> i;
+	switch(i){
+		case 1: seperate_check();
+				break;
+		case 2: pay_together();
+				break;
+		case 3: split_bill();
+				break;
 	}
 }
 
+//YOU WERE HERE, SOLVING FOR CLEAR_TABLE, YOU NEED TO FIGURE OUT HOW TO CLEAR THE ARRAY OF ORDERS AND RESET EVERYTHING BACK TO ZERO.
+
+//clears everything from the table/chairs
+void Table::clear_table(){
+	int i;
+	for (i = 0; i < people; i++){
+		tables[i].bill = 0;
+		
+	}
+	
+	people = 0;
+	
+	
+}
