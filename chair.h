@@ -9,6 +9,7 @@ using namespace std;
 class Chair{
 private:
 	int counter;
+	int position;
 public:
 	int bill;
 	string order[ITEMS];
@@ -20,20 +21,14 @@ public:
 	void take_order();
 	
 	//adds the order up and makes a bill from it
-	void make_bill(int[], string[]);
+	void make_bill();
 	
+	//returns the position of the chair
+	int pos_return();
 	
-	
+	//assigns the position of who is ordering
+	void assign_position(int p);
 	
 };
-
-
-
-
-
-
-
-
-
 
 #endif
