@@ -1,46 +1,58 @@
 #include <iostream>
 #include <string>
 #include "chair.h"
+#include "table.h"
 
 using namespace std;
 
 
-void test(){
-	string access;
+void command(Table& object){
+	int access;
 	do {
-		cout << "command the object here\n";
+		cout << "\n\n";
+		cout << "what would you like to do? \n";
+		cout << "1: view what has been ordered for this table \n";
+		cout << "2: take order for table\n";
+		cout << "3: make final bill and close out this table\n";
+		cout << "4: exit and go back\n";
 		cin >> access;
-		cout << "start the table object here.\n";
-	}while (access != "yes");
+		switch(access){
+			case 1: object.view_table();
+					break;
+			case 2: object.chairs();
+					break;
+		}
+	}while (access != 4);
+	cout << "\n\n";
 }
 
 int main(){
-	string menu[ITEMS] = {"salad", "meatloaf", "nachos", "pizza", "burrito"};
-	int menu_price[ITEMS] = {10, 12, 8, 9, 10};
-	
-	Chair A;
-	A.take_order();
-	A.make_bill(menu_price, menu);
 	
 	
-	/*
+	Table A;
+	Table B;
+	Table C;
+	Table D;
+	
 	int counter;
 	string access;
 	do{
-		cout << "Which table would you like to look at? 1, 2, or 3? " << endl;
+		cout << "Which table would you like to look at? 1, 2, 3, or 4? " << endl;
 		cin >> counter;
 		switch (counter){
-			case 1: test();
+			case 1: command(A);
 					break;
-			case 2: cout << "you have chosen 2\n";
+			case 2: command(B);
 					break;
-			case 3: cout << "you have chosen 3\n";
+			case 3: command(C);
+					break;
+			case 4: command(D);
 					break;
 		}
 		cout << "would you like to exit? yes/no?" << endl;
 		cin >> access;
 	}while (access != "yes");
-	*/
+	
 	
 	
 	
